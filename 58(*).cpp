@@ -30,41 +30,36 @@ Farhan can pay the bill by using the following counts of different notes:
 using namespace std;
 int main()
 {
-    int billAmount;
-    cout << "\nEnter the bill amount: ";
+    int billAmount, totalAmount = 0;
+    cout << "Enter bill amount: ";
     cin >> billAmount;
-    int notes[8] = {500, 100, 50, 20, 10, 5, 2, 1};
-    int notesCount[8];
+    int note[] = {500, 100, 50, 20, 10, 5, 2, 1}, noteCount[8];
     for (int i = 0; i < 8; i++)
     {
-        cout << notes[i] << " : ";
-        cin >> notesCount[i];
+        cout << note[i] << ": ";
+        cin >> noteCount[i];
+        totalAmount += noteCount[i] * note[i];
     }
-    cout << "-------------------------------------------------------------" << endl;
-    int totalAmount = 0;
-    for (int i = 0; i < 8; i++)
-    {
-        totalAmount += notes[i] * notesCount[i];
-    }
+    cout << "--------------------------------------------"<<endl;
     if (totalAmount < billAmount)
-        cout << "Not pay this bill !!";
+    {
+        cout << "Not payable!!" << endl;
+    }
     else
     {
-
         for (int i = 0; i < 8; i++)
         {
-            if (notesCount[i] > 0)
-            {
-                int count = min(notesCount[i], billAmount / notes[i]);
-                cout << notes[i] << " : " << count << endl;
-                billAmount -= count * notes[i];
-            }
+            // if (noteCount[i] > 0)
+            // {
+                int count = min(noteCount[i], billAmount / note[i]);
+                cout << note[i] << ": " << count << endl;
+                billAmount -= count * note[i];
+            // }
         }
         if (billAmount != 0)
-            cout
-                << "Remained bill amount: " << billAmount << "\nFarhan not pay remained bill\n" << endl;
+            cout << "remain bill" << billAmount << endl;
         else
-            cout << "Farhan can pay the bill by using the following counts of different notes\n" << endl;
+            cout << "success" << endl;
     }
     return 0;
 }
