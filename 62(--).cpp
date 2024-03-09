@@ -46,3 +46,46 @@ int main()
     }
     return 0;
 }
+
+/*
+------------------------------------------------------------------------------------------
+*/
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int x, y, toward;
+    char direction;
+    cout << "\nEnter current coordinate (x and y positions): ";
+    cin >> x >> y;
+    cout << "Enter No. units towards direction: ";
+    cin >> toward;
+    cout << "Enter the first letter of direction (North, South, East, West): ";
+    cin >> direction;
+    direction = tolower(direction);
+    if (direction == 'e')
+    {
+
+        cout << "New coordinate: " << '(' << x + toward << ',' << y << ")\n" << endl;
+    }
+    else if (direction == 'w')
+    {
+
+        cout << "New coordinate: " << '(' << x - toward << ',' << y << ")\n" << endl;
+    }
+    else if (direction == 'n')
+    {
+        cout << "New coordinate: "
+             << '(' << x << ',' << y + toward << ")\n" << endl;
+    }
+    else if(direction == 's')
+    {
+        cout << "New coordinate: "
+             << '(' << x << ',' << y - toward << ")\n" << endl;
+    }
+    else{
+        cout << "invalid direction: " << direction<<"\n" << endl;
+    }
+    return 0;
+}
