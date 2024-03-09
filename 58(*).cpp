@@ -46,7 +46,7 @@ int main()
     {
         totalAmount += notes[i] * notesCount[i];
     }
-    if (totalAmount < billAmount)
+    if (totalAmount <= billAmount)
         cout << "Not pay this bill !!";
     else
     {
