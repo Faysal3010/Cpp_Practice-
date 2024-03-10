@@ -1,6 +1,5 @@
 /*Write a program to compute the following series using while loop: 5^2+9^2+15^2+23^2+....+n^2*/
 #include <iostream>
-#include <cmath>
 using namespace std;
 int main()
 {
